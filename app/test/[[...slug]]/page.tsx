@@ -1,5 +1,8 @@
 export default function Page({ params }: { params: { slug: string[] } }) {
-  console.log("PARAMS", params);
-  console.log("DECODED", decodeURIComponent(params.slug[0]));
-  return <div>{JSON.stringify(params)}</div>;
+  const obj = {
+    params,
+    decoded: decodeURIComponent(params.slug[0]),
+  };
+  console.log(obj);
+  return <div>{JSON.stringify(obj)}</div>;
 }
